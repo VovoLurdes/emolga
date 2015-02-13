@@ -21,11 +21,10 @@ sub baz {
         return 1;
 }
 
-
 sub url {
         my ($url) = @_;
-	$request = HTTP::Request->new('GET',$url);
-	print $ua->request($request);
-
+	my $entrada = $ua->get($url);
+	my $conteudo = $entrada->content;
+	print $conteudo;
 }
 1;
