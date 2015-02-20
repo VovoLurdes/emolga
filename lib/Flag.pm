@@ -86,4 +86,15 @@ sub descompactar_de_verdade{
 
         return 1;
 }
+
+sub print_array{
+	
+       my ($zzz, $holyplay) = @_;
+
+       print "@$zzz\t";
+       print "\n------------------\n";
+       print "@$holyplay\t";
+       
+       return 1;
+}
 1;
