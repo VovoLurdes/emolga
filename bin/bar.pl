@@ -2,7 +2,7 @@ use strict;
 use warnings FATAL => 'all';
 use diagnostics;
 
-local $\ = "\n";
+#local $\ = "\n";
 
 my @qualquercoisa = ();
 
@@ -12,19 +12,99 @@ $qualquercoisa[7] = "k";
 
 my %tentafazerumhash = (banana => "amarelo");
 
-print $tentafazerumhash{banana};
+print "\n".$tentafazerumhash{banana};
 $tentafazerumhash{carro} = "Gol";
 print $tentafazerumhash{carro}."\n";
 
+#adicionando um array dentro de um hash
 $tentafazerumhash{livro} = ['Game of Thrones','Inferno', 'Guia dos mochilheiros das galaxias'];
 
+
+print "Exibir na tela os valores dos array que esta dentro do Hash";
     foreach ( @{$tentafazerumhash{livro}} )  {
         print $_;
     }
 
-print $tentafazerumhash{livro}[0];
 
-my $scalar = ['Game of Thrones','Inferno', 'Guia dos mochilheiros das galaxias'];
+#my $scalar = ['Game of Thrones','Inferno', 'Guia dos mochilheiros das galaxias'];
+#print $scalar;
 
-print $scalar;
+<STDIN>;
+
+#hash dentro de hash
+my %cartoon = (
+
+    cdz => {
+      pegasus => "Seya",
+      aquario => "Camus",
+      andromeda => "Shun viado",
+},
+
+    onepiece => {
+      capitao => "Luffy",
+      espadachim => "Roronoa Zoro",
+      cozinheiro => "Sanji",
+},
+    pokemon => {
+      mestrepokemon => "Ashe",
+      enfermeira    => "Joy",
+      professor     => "Carvalho",
+},
+     
+);
+
+print "\n\n\t\tUm hash de um hash:\n";
+#sh de um hash:\n";
+print $cartoon{cdz}{pegasus};
+
+ for my $chaves (sort keys %cartoon){
+	print "\n$chaves:\n";
+	for my $i (sort keys %{$cartoon{$chaves}}){
+		print "$i: $cartoon{$chaves}{$i} \n";
+	}
+}
+
+<STDIN>;
+
+#arrays com hash
+my @desenho = ( 
+{
+      pegasus => "Seya",
+      aquario => "Camus",
+      andromeda => "Shun viado",
+},
+
+{
+      capitao => "Luffy",
+      espadachim => "Roronoa Zoro",
+      cozinheiro => "Sanji",
+},
+{
+      mestrepokemon => "Ashe",
+      enfermeira    => "Joy",
+      professor     => "Carvalho",
+},
+
+);
+
+print "\n\n\t\tUm hash de um Array:\n";
+
+ for my $chaves (sort keys @desenho){
+      # for my $i (sort keys @{$desenho[$chaves]}){
+       #        print "$i: $desenho[$chaves]{$i} \n";
+       #}
+	print @desenho[$chaves];
+}
+
+
+<STDIN>;
+
+my @anime = (["Seya","Camus","Shun"],["Luffy","Roronoa Zoro","Sanji"],["Ashe","Joy","Carvalho"]);
+
+
+
+
+
+
+
 
