@@ -89,19 +89,29 @@ my @desenho = (
 
 print "\n\n\t\tUm hash de um Array:\n";
 
- for my $chaves (sort keys @desenho){
-      # for my $i (sort keys @{$desenho[$chaves]}){
-       #        print "$i: $desenho[$chaves]{$i} \n";
-       #}
-	print @desenho[$chaves];
+ for my $chaves (@desenho){
+         for my $i (sort keys %$chaves){
+         print "$$chaves{$i} \n";
+       }
+	#print @desenho[$chaves];
 }
-
 
 <STDIN>;
 
 my @anime = (["Seya","Camus","Shun"],["Luffy","Roronoa Zoro","Sanji"],["Ashe","Joy","Carvalho"]);
 
+print "\n\n\t\tUm Array de um Array:\n";
 
+#$i esta com a posição da memoria do array, para referenciar precisa colocar o @$i
+for my $i (@anime){
+
+#$j está pegando as chaves do array
+	for my $j (sort keys @$i){
+
+        #$$i esta pegando o valor que contem dentro do array do array 
+            print $$i[$j]."\n";
+	}
+} 
 
 
 

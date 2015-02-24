@@ -46,7 +46,7 @@ sub download {
 	my $variavel = url($url);
         
         #Abrio arquivo com o nome que escolheu por parametro
-        open my $fh, '>', '/tmp/$arquivo';
+        open my $fh, '>', "/tmp/$arquivo";
 
        	print $fh $variavel;
 	close $fh;	
@@ -74,8 +74,6 @@ sub descompactar_de_verdade{
         local $/ = undef;
         open my $fucking_arquivo , '<' , $arquivo;
         my $fucking_conteudo = <$fucking_arquivo>;
-        close $fucking_arquivo;
-
         my $dest = Compress::Zlib::memGunzip($fucking_conteudo) or die "Cannot uncompress: $gzerrno\n";
 
         open my $destino_handler , '>' , $arquivo_destino;
