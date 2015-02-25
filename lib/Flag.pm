@@ -95,4 +95,23 @@ sub print_array{
        
        return 1;
 }
+
+sub remover_arquivo{
+	
+	my ($diretorio,$arquivo) =@_;
+
+	 opendir 'DIR', $diretorio;
+	my @files = readdir 'DIR';
+	my $i=0;
+	closedir 'DIR';
+
+foreach(@files){
+
+     if(m/louco\d/xms) { remove ($_); }
+}
+
+}
+
+
+
 1;
